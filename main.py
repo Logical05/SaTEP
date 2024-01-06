@@ -1,5 +1,6 @@
-from browsers                          import browsers
 from os.path                           import exists
+from browsers                          import browsers
+from shutil                            import copy, rmtree
 from csv                               import reader, writer
 from tkinter                           import Label, IntVar, Radiobutton, Tk, Button, mainloop, messagebox
 from numpy                             import ndarray, array, arange
@@ -57,15 +58,13 @@ class SaTEP:
                 for col in arange(25):
                     self.choice[col].set(row[col])
 
-    def SavePath(self, driverManager) -> str:
-        driverCSV = "data/driverpath.csv"
-        with open(driverCSV, mode='r+') as csvFile:
-            driverPath = csvFile.read()
-            if exists(driverPath):
-                return driverPath
-            path = driverManager.install()
-            csvFile.write(path)
-            return path
+    def SavePath(self, driverManager) -> ndarray:
+        driverPath = "data/driver.exe"
+        if exists(driverPath):
+            return array([driverPath, "True"])
+        path = driverManager.install()
+        copy(path, driverPath)
+        return array([path, "False"])
 
     def GUI(self) -> None:
         for browser in browsers():
@@ -73,12 +72,14 @@ class SaTEP:
             if type == "chrome":
                 options = ChromeOptions()
                 options.add_experimental_option("detach", True)
-                self.driver = Chrome(service=ChromeService(self.SavePath(ChromeDriverManager())), options=options)
+                path, exist = self.SavePath(ChromeDriverManager())
+                self.driver = Chrome(service=ChromeService(path), options=options)
                 break
             if type == "msedge":
                 options = EdgeOptions()
                 options.add_experimental_option("detach", True)
-                self.driver = Edge(service=EdgeService(self.SavePath(EdgeChromiumDriverManager())), options=options)
+                path, exist = self.SavePath(EdgeChromiumDriverManager())
+                self.driver = Edge(service=EdgeService(path), options=options)
                 break
         else:
             messagebox.showerror("ERROR", "Please install Chrome or Microsoft Edge.")
@@ -102,6 +103,9 @@ class SaTEP:
         mainloop()
 
         self.driver.quit()
+        if (exist == "False"):
+            index = path.find(".wdm") + 4
+            rmtree(path[:index])
 
 if __name__ == "__main__":
     SaTEP().GUI()
