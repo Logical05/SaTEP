@@ -2,7 +2,7 @@ from browsers                          import browsers
 from os.path                           import exists
 from csv                               import reader, writer
 from tkinter                           import Label, IntVar, Radiobutton, Tk, Button, mainloop, messagebox
-from numpy                             import ndarray, array, arange, uint8
+from numpy                             import ndarray, array, arange
 from selenium.webdriver                import EdgeOptions, Edge, ChromeOptions, Chrome
 from selenium.webdriver.chrome.service import Service as ChromeService
 from selenium.webdriver.edge.service   import Service as EdgeService
@@ -31,7 +31,7 @@ class SaTEP:
                 self.TextRadio(f"    {i+13}   ", self.choice[i+12], 4, 4, i)
 
     def GetChoice(self) -> ndarray:
-        return array([self.choice[i].get() for i in arange(25)], dtype=uint8)
+        return array([self.choice[i].get() for i in arange(25)])
 
     def Check(self) -> None:
         try:
@@ -53,6 +53,7 @@ class SaTEP:
     def Load(self) -> None:
         with open(self.saveCSV, mode='r') as csvFile:
             for row in reader(csvFile):
+                if not row: return
                 for col in arange(25):
                     self.choice[col].set(row[col])
 
