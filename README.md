@@ -30,3 +30,6 @@ You can follow the steps below to download the installer for this program.
 Permission to modify and redistribute is granted under the terms of the Apache 2.0 license.
 See the [LICENSE](https://github.com/Logical05/SaTEP/blob/master/LICENSE) file for the full license.
 
+## Donate
+
+![image info](data/QR.png)
