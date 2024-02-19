@@ -46,7 +46,7 @@ Semi-automatic Teacher Evaluation Program for CKK.
 ![Screenshot 2024-02-19 021925](https://github.com/Logical05/SaTEP/assets/85784528/26666298-95bd-496e-a1f2-06b053aebaf7)
 ![Screenshot 2024-02-19 023638](https://github.com/Logical05/SaTEP/assets/85784528/aab45954-a9c0-4b8d-9662-a266295ab18d)
 
-- ประเมินตนเองภาคความรู้สึก ให้เลือกช่อง URL ด้านบนแล้วพิมพ์ต่อด้านหลังข้อความด้วย `&ChTerm=T&ChYear=Y` T คือเทอมที่ต้องการจะ Copy และ Y คือปีที่ต้องการจะ Copy แล้วก็ Enter เสร็จแล้วก็ทำการคลิก Copy แล้วก็ทำเหมือนวิธีการประเมินครูได้เลย
+- ประเมินตนเองภาคความรู้สึก ให้เลือกช่อง URL ด้านบนแล้วพิมพ์ต่อด้านหลังข้อความด้วย `&ChTerm=T&ChYear=Y`  T คือเทอมที่ต้องการจะ Copy และ Y คือปีที่ต้องการจะ Copy แล้วก็ Enter เสร็จแล้วก็ทำการคลิก Copy ในโปรแกรมแล้วก็ทำเหมือนวิธีการประเมินครูได้เลย
 ![Screenshot 2024-02-19 022007](https://github.com/Logical05/SaTEP/assets/85784528/6d5e2134-9f52-456e-87b6-c38a7c22ba7b)
 ![Screenshot 2024-02-19 023600](https://github.com/Logical05/SaTEP/assets/85784528/bd3dbc1f-56bf-4942-8969-4b3a2a315e79)
 ![Screenshot 2024-02-19 023653](https://github.com/Logical05/SaTEP/assets/85784528/83fbac43-d9fd-44c8-b725-a052d2c210b7)
