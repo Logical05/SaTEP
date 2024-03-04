@@ -4,7 +4,7 @@
 [![Discord](https://img.shields.io/badge/Discord-Join-blue?logo=discord&logoColor=white)](https://discord.gg/Gtn9DN5UF5)
 
 ----
-# SaTEP 
+# SaTEP (Windows Only)
 
 Semi-automatic Teacher Evaluation Program for CKK. (ขอตั้งชื่อไว้แบบเดิมแต่ทำได้หมด)
 
