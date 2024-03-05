@@ -44,13 +44,13 @@ Semi-automatic Teacher Evaluation Program for CKK. (ขอตั้งชื่�
 
   ![Screenshot 2024-02-20 102710](https://github.com/Logical05/SaTEP/assets/85784528/3999d3cb-bc1e-4f1e-bacb-34827e18e310)
 
-## Python Library
+## Python Library (Python 3.11)
 
-- [pybrowsers](https://pypi.org/project/pybrowsers/)         == 0.5.2
-- [numpy](https://pypi.org/project/numpy/)              == 1.26.3
-- [selenium](https://pypi.org/project/selenium/)           == 4.17.2
-- [webdriver-manager](https://pypi.org/project/webdriver-manager/)  == 4.0.1
-- [py2exe](https://pypi.org/project/py2exe/)             == 0.13.0.1
+- [pybrowsers](https://pypi.org/project/pybrowsers/)
+- [numpy](https://pypi.org/project/numpy/)
+- [selenium](https://pypi.org/project/selenium/)
+- [webdriver-manager](https://pypi.org/project/webdriver-manager/)
+- [py2exe](https://pypi.org/project/py2exe/)
 
 ## Copyright & License
 
