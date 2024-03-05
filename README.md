@@ -50,7 +50,7 @@ Semi-automatic Teacher Evaluation Program for CKK. (ขอตั้งชื่�
 - [numpy](https://pypi.org/project/numpy/)
 - [selenium](https://pypi.org/project/selenium/)
 - [webdriver-manager](https://pypi.org/project/webdriver-manager/)
-- [py2exe](https://pypi.org/project/py2exe/)
+- [pyinstaller](https://pypi.org/project/pyinstaller/)
 
 ## Copyright & License
 
