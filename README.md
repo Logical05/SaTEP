@@ -51,6 +51,7 @@ Semi-automatic Teacher Evaluation Program for CKK. (ขอตั้งชื่�
 - [selenium](https://pypi.org/project/selenium/)
 - [webdriver-manager](https://pypi.org/project/webdriver-manager/)
 - [pyinstaller](https://pypi.org/project/pyinstaller/)
+- [pillow](https://pypi.org/project/pillow/)
 
 ## Copyright & License
 
