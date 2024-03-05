@@ -46,11 +46,11 @@ Semi-automatic Teacher Evaluation Program for CKK. (ขอตั้งชื่�
 
 ## Python Library
 
-- [pybrowsers](https://pypi.org/project/pybrowsers/)
-- [numpy](https://pypi.org/project/numpy/)
-- [selenium](https://pypi.org/project/selenium/)
-- [webdriver-manager](https://pypi.org/project/webdriver-manager/)
-- [py2exe](https://pypi.org/project/py2exe/)
+- [pybrowsers](https://pypi.org/project/pybrowsers/)         == 0.5.2
+- [numpy](https://pypi.org/project/numpy/)              == 1.26.3
+- [selenium](https://pypi.org/project/selenium/)           == 4.17.2
+- [webdriver-manager](https://pypi.org/project/webdriver-manager/)  == 4.0.1
+- [py2exe](https://pypi.org/project/py2exe/)             == 0.13.0.1
 
 ## Copyright & License
 
