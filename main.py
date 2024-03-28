@@ -23,9 +23,7 @@ class Web():
         self.year    : str       = ""
 
     def Start(self, column: list, row: ndarray, radios: int) -> None:
-        """
-        Process การประเมินแบบอัตโนมัติ
-        """
+        """Process การประเมินแบบอัตโนมัติ"""
         try:
             # Check ว่าจำนวนช่องที่จะประเมินตรงกับแบบประเมินไหม
             if self.driver.execute_script("""return document.getElementsByClassName("regular-radio").length""") != radios:
@@ -37,9 +35,7 @@ class Web():
         except: messagebox.showerror("ERROR", "เลือกการประเมินที่ถูกต้องที่ต้องการจะประเมิน")
 
     def Copy(self, column: list, numRow: int, radios: int) -> ndarray:
-        """
-        Process การ Copy แบบอัตโนมัติ
-        """
+        """Process การ Copy แบบอัตโนมัติ"""
         try:
             # Check ว่าจำนวนช่องที่จะ Copy ตรงกับแบบประเมินไหม
             if self.driver.execute_script("""return document.getElementsByClassName("regular-radio").length""") != radios:
@@ -56,9 +52,7 @@ class Web():
         except: messagebox.showerror("ERROR", "เลือกการประเมินที่ถูกต้องที่ต้องการจะประเมิน")
 
     def SavePath(self, driverManager: ChromeDriverManager|EdgeChromiumDriverManager) -> None:
-        """
-        Procoess ในการย้ายตำแหน่งของ Webdriver จาก C:\Users\ชื่อเครื่อง\.wdm มาที่ตำแหน่งที่ติดตั้งโปรแกรมนี้
-        """
+        """Procoess ในการย้ายตำแหน่งของ Webdriver จาก C:\Users\ชื่อเครื่อง\.wdm มาที่ตำแหน่งที่ติดตั้งโปรแกรมนี้"""
         try:
             self.notExist = not exists(self.path)
             if self.notExist:
@@ -69,9 +63,7 @@ class Web():
         except: messagebox.showerror("ERROR", " 1. ปิดโปรแกรมแล้วเปิดใหม่\n 2. เช็คว่า Wifi เชื่อมไหม\n 3. ลบแล้วโหลดใหม่")
 
     def WebGUI(self) -> None:
-        """
-        Procoess ในการหาว่าในเครื่องมี Webbrowser ตัวไหนบ้าง พร่อมกับใช้ Webbrowser นั้น
-        """
+        """Procoess ในการหาว่าในเครื่องมี Webbrowser ตัวไหนบ้าง พร่อมกับใช้ Webbrowser นั้น"""
         for browser in browsers():
             type: str = browser["browser_type"]
             if type == "chrome":
@@ -94,17 +86,13 @@ class Web():
         self.driver.get("https://www.chakkham.info/site/signin/")
 
     def QuitWeb(self) -> None:
-        """
-        Procoess ในการปิด Webbrowser แล้วถ้าเป็นการเปิดโปรแกรมครั้งแรกจะทำการลบ Webdriver ที่ C:\Users\ชื่อเครื่อง\.wdm
-        """
+        """Procoess ในการปิด Webbrowser แล้วถ้าเป็นการเปิดโปรแกรมครั้งแรกจะทำการลบ Webdriver ที่ C:\Users\ชื่อเครื่อง\.wdm"""
         self.driver.quit()
         if self.notExist: 
             rmtree(self.path[:(self.path.find(".wdm") + 4)])
 
     def CopyStart(self, column: list, numRow: int, radios: int, format: str) -> None:
-        """
-        Process การ Copy และประเมินแบบอัตโนมัติ
-        """
+        """Process การ Copy และประเมินแบบอัตโนมัติ"""
         try:
             if self.CheckURL():
                 return
@@ -125,9 +113,7 @@ class Web():
         except: messagebox.showerror("ERROR", "เลือกการประเมินที่ถูกต้องที่ต้องการจะประเมิน")
 
     def CheckURL(self) -> bool:
-        """
-        Process ในการ Check ว่าอยู่หน้าที่ต้องประเมินยัง
-        """
+        """Process ในการ Check ว่าอยู่หน้าที่ต้องประเมินยัง"""
         url: str = self.driver.current_url
         if isFind := url.find("?feature=") == -1 or url.find("notification") != -1 or url.find("profile") != -1:
             messagebox.showerror("ERROR", "เปิดหน้าแบบประเมินที่ต้องการจะประเมินก่อน")
@@ -153,18 +139,14 @@ class Main(Web):
         self.QuitWeb()
     
     def Root(self, root: Frame) -> None:
-        """
-        กำหนดประเภท root กับใส่ Menu bar
-        """
+        """กำหนดประเภท root กับใส่ Menu bar"""
         self.root: Frame = root
         root.grid()
         self.Menu()
 
     def Label(self, text: str, column: int, row: int, columnspan: int=1, rowspan: int=1, 
                                                       padx      : int=0, pady   : int=5) -> None:
-        """
-        Label Gadgets แบบย่อ
-        """
+        """Label Gadgets แบบย่อ"""
         Label(self.root, text=text).grid(column=column,         row=row,
                                          columnspan=columnspan, rowspan=rowspan,
                                          padx=padx,             pady=pady)
@@ -172,18 +154,14 @@ class Main(Web):
     def Button(self, text: str, command, column: int, row: int, columnspan: int=1,  rowspan: int=1, 
                                                                 padx      : int=10, pady   : int=5, 
                                                                 ipadx     : int=0,  ipady  : int=0, bg: str="white") -> None:
-        """
-        Button Gadgets แบบย่อ
-        """
+        """Button Gadgets แบบย่อ"""
         Button(self.root, text=text,  command=command, bg=bg).grid(column=column,         row=row, 
                                                                    columnspan=columnspan, rowspan=rowspan, 
                                                                    padx=padx,             pady=pady,
                                                                    ipadx=ipadx,           ipady=ipady)
 
     def ToPage(self, page: int, usedYear: bool=False) -> None:
-        """
-        เปลี่ยนไปหน้าต่างที่กำหนด
-        """
+        """เปลี่ยนไปหน้าต่างที่กำหนด"""
         self.year = ""
         if usedYear:
             self.year = self.Y.get()[:4]
@@ -201,9 +179,7 @@ class Main(Web):
         super().CopyStart(column, numRow, radios, format)
 
     def MM(self, root: Tk) -> None:
-        """
-        หน้าต่างหลัก
-        """
+        """หน้าต่างหลัก"""
         MM: Frame = Frame(root)
         self.Root(MM)
         self.Label("ปีที่ต้องการจะ Copy : ", 0, 0)
@@ -225,9 +201,7 @@ class Main(Web):
         self.Button("ประเมินครู -->",                lambda : self.ToPage(2), 1, 5)
 
     def C(self, root: Tk) -> None:
-        """
-        หน้าต่างประเมินตนเอง
-        """
+        """หน้าต่างประเมินตนเอง"""
         SE: Frame = Frame(root)
         self.Root(SE)
         self.Label("*** ใส่ปีที่ต้องการจะ Copy ในหน้าแรกด้วย ***", 0, 0, 2)
@@ -240,9 +214,7 @@ class Main(Web):
         self.Button("<--   Back", lambda : self.ToPage(0), 0, 3, 2, pady=15, ipadx=15)
 
     def StartET(self, row: ndarray) -> None:
-        """
-        ปุ่ม Start เฉพาะของประเมินครู
-        """
+        """ปุ่ม Start เฉพาะของประเมินครู"""
         try:
             if self.CheckURL():
                 return
@@ -250,9 +222,7 @@ class Main(Web):
         except: messagebox.showerror("ERROR", "Start ให้ถูกที่ หรือไป Copy มาก่อน")
 
     def CopyET(self) -> None:
-        """
-        ปุ่ม Copy เฉพาะของประเมินครู
-        """
+        """ปุ่ม Copy เฉพาะของประเมินครู"""
         try: 
             if self.CheckURL():
                 return
@@ -260,9 +230,7 @@ class Main(Web):
         except: messagebox.showerror("ERROR", "Copy ให้ถูกที่")
 
     def ET(self, root) -> None:
-        """
-        หน้าต่างประเมินครู
-        """
+        """หน้าต่างประเมินครู"""
         ET: Frame = Frame(root)
         self.Root(ET)
         self.Label(f"*** อ่านวิธีใช่ที่                         ***", 0, 0, 2)
@@ -278,18 +246,14 @@ class Main(Web):
         self.Button("<--   Back", lambda : self.ToPage(0), 0, 3, 2, pady=10, ipadx=15)
 
     def Menu(self) -> None:
-        """
-        Menu Bar
-        """
+        """Menu Bar"""
         menuBar = Menu(self.GUI)
         self.GUI.config(menu=menuBar)
         menuBar.add_cascade(label="About",  command=self.About)
         menuBar.add_cascade(label="Donate", command=self.Donate)
 
     def About(self) -> None:
-        """
-        หน้าต่าง About
-        """
+        """หน้าต่าง About"""
         about : Toplevel        = Toplevel(self.GUI)
         y     : list[float]     = [0.3, 0.5, 0.7]
         text  : list[str]       = ["Authors : Logical05",
@@ -313,9 +277,7 @@ class Main(Web):
         about.mainloop()
 
     def Donate(self) -> None:
-        """
-        หน้าต่าง Donate
-        """
+        """หน้าต่าง Donate"""
         donate: Toplevel   = Toplevel(self.GUI)
         image : PhotoImage = PhotoImage(Image.open("data/qr.png"))
         donate.iconbitmap("data/logo.ico")
