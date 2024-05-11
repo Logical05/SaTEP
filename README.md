@@ -1,3 +1,6 @@
+# 🚫 Error : เนื่องจาก Chrome ได้อัปเดตเวอร์ชั่นใหม่ทำให้ไม่สามารถทำงานร่วมกับตัวโปรแกรมได้ 🚫
+----
+
 [![Window11](https://img.shields.io/badge/Windows-blue?style=flat&logo=windows11)]()
 [![Apache-2.0 license](https://img.shields.io/badge/license-Apache%202.0-%23D22128?style=flat&logo=apache
 )](https://github.com/Logical05/SaTEP/blob/master/LICENSE)
